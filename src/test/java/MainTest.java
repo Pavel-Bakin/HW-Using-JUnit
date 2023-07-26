@@ -9,32 +9,36 @@ public class MainTest {
     public void testLeapYearDivisibleBy400() {
         int year = 2000;
         int result = Main.calculateDaysInYear(year);
+        int expectedDays = 366;
 
-        Assertions.assertEquals(366, result);
+        Assertions.assertEquals(expectedDays, result);
     }
 
     @Test
     public void testLeapYearDivisibleBy4ButNotBy100() {
         int year = 2024;
         int result = Main.calculateDaysInYear(year);
+        int expectedDays = 366;
 
-        Assertions.assertEquals(366, result);
+        Assertions.assertEquals(expectedDays, result);
     }
 
     @Test
     public void testNonLeapYear() {
         int year = 2023;
         int result = Main.calculateDaysInYear(year);
+        int expectedDays = 365;
 
-        Assertions.assertEquals(365, result);
+        Assertions.assertEquals(expectedDays, result);
     }
 
     @Test
     public void testYearDividedBy100() {
         int year = 2100;
         int result = Main.calculateDaysInYear(year);
+        int expectedDays = 365;
 
-        Assertions.assertEquals(365, result);
+        Assertions.assertEquals(expectedDays, result);
     }
 
     @Test
@@ -54,8 +58,9 @@ public class MainTest {
 
         //Можно проверить, что для 2000 года количество дней равно 366
         int year2000 = 2000;
+        int expectedDays = 366;
         int daysInYear2000 = Main.calculateDaysInYear(year2000);
-        Assertions.assertEquals(366, daysInYear2000);
+        Assertions.assertEquals(expectedDays, daysInYear2000);
 
         // Выводим время выполнения на консоль
         System.out.println("Время выполнения для " + numberOfIterations + " итераций: " + executionTime + " мс.");
